@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import About from "./Pages/About/About";
+import Home from "./Pages/Home.js/Home";
+import Login from "./Pages/Login/Login";
+import Navbar from "./Pages/Shared/Navbar";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+      <Navbar></Navbar>
+      <Routes>
+        <Route path="/about" element={<About></About>}></Route>
+        <Route path="/" element={<Home></Home>}></Route>
+        <Route path="/login" element={<Login></Login>}></Route>
+      </Routes>
     </div>
   );
 }
 
 export default App;
+
+/* Bicycle
+https://i.ibb.co/Y7VHMjL/bike1.jpg
+https://i.ibb.co/ccBpGks/bike2.jpg
+https://i.ibb.co/ZM1mCqZ/bike3.jpg
+https://i.ibb.co/RD03MV2/bike4.jpg
+https://i.ibb.co/qxVBRDX/bike5.png
+https://i.ibb.co/1Z7Tccj/bike6.png
+https://i.ibb.co/xgpn0XS/bike7.jpg
+https://i.ibb.co/MCnvMS2/bike8.jpg
+*/

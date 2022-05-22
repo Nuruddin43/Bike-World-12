@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "MSI GEFORCE",
+    "price": "1140",
+    "description": "NVIDIA® GeForce RTX™ 30 Series Laptop GPUs power the world’s fastest l...",
+    "img": "https://i.ibb.co/vQ92G7X/apple-macbook.jpg",
+    "instock": 55000,
+    "orderquantity": 0
+  },
+  {
+    "id": 2,
+    "name": "MSI GEFORCE",
+    "price": "1140",
+    "description": "NVIDIA® GeForce RTX™ 30 Series Laptop GPUs power the world’s fastest l...",
+    "img": "https://i.ibb.co/vQ92G7X/apple-macbook.jpg",
+    "instock": 55000,
+    "orderquantity": 0
+  },
+  {
+    "id": 3,
+    "name": "MSI GEFORCE",
+    "price": "1140",
+    "description": "NVIDIA® GeForce RTX™ 30 Series Laptop GPUs power the world’s fastest l...",
+    "img": "https://i.ibb.co/vQ92G7X/apple-macbook.jpg",
+    "instock": 55000,
+    "orderquantity": 0
+  },
+  {
+    "id": 4,
+    "name": "MSI GEFORCE",
+    "price": "1140",
+    "description": "NVIDIA® GeForce RTX™ 30 Series Laptop GPUs power the world’s fastest l...",
+    "img": "https://i.ibb.co/vQ92G7X/apple-macbook.jpg",
+    "instock": 55000,
+    "orderquantity": 0
+  },
+  {
+    "id": 5,
+    "name": "MSI GEFORCE",
+    "price": "1140",
+    "description": "NVIDIA® GeForce RTX™ 30 Series Laptop GPUs power the world’s fastest l...",
+    "img": "https://i.ibb.co/vQ92G7X/apple-macbook.jpg",
+    "instock": 55000,
+    "orderquantity": 0
+  },
+  {
+    "id": 6,
+    "name": "MSI GEFORCE",
+    "price": "1140",
+    "description": "NVIDIA® GeForce RTX™ 30 Series Laptop GPUs power the world’s fastest l...",
+    "img": "https://i.ibb.co/vQ92G7X/apple-macbook.jpg",
+    "instock": 55000,
+    "orderquantity": 0
+  }
+]
