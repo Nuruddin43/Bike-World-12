@@ -11,7 +11,7 @@ const Products = () => {
   return (
     <div>
       <h2 className="text-5xl text-center">Products: {products.length}</h2>
-      <div className="grid sm:grid-col-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid sm:grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4">
         {products.map((product) => (
           <Product key={product._id} product={product}></Product>
         ))}
