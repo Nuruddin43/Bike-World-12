@@ -32,3 +32,5 @@ https://i.ibb.co/MCnvMS2/bike8.jpg
 https://i.ibb.co/cDqnr8V/26-inch-Steel-frame-shock-fork-27.jpg
 https://i.ibb.co/ccBpGks/bike2.jpg
 */
+// ctgBike
+// W6ix4vMy9dDJM01e
