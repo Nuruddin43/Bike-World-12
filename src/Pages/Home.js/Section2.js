@@ -6,7 +6,7 @@ import icon4 from "../../images/icon/feedback.png";
 
 const Section2 = () => {
   return (
-    <div className="mt-12">
+    <div className="mt-20">
       <h2 className="text-4xl text-center text-cyan-400 uppercase">
         We are Experts in Bicycle Manufacturer
         {/* Our professional team works to <br /> increase productivity and cost
