@@ -7,7 +7,7 @@ const Section3 = () => {
         <div class="hero-overlay bg-opacity-60"></div>
         <div class="hero-content text-center text-neutral-content">
           <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div class="card w-96 hover:bg-cyan-700 hover:text-white border-2 shadow-xl ">
+            <div class="card w-96 hover:bg-gradient-to-r from-cyan-500 to-blue-500 hover:text-white border-2 shadow-xl ">
               <div class="card-body items-center text-center">
                 <h2 class="card-title text-6xl">World Class Technology</h2>
                 <p>If a dog chews shoes whose shoes does he choose?</p>
@@ -16,7 +16,7 @@ const Section3 = () => {
                 </div>
               </div>
             </div>
-            <div class="card w-96  hover:bg-cyan-700 hover:text-white border-2  shadow-xl ">
+            <div class="card w-96  hover:bg-gradient-to-r from-cyan-500 to-blue-500 hover:text-white border-2  shadow-xl ">
               <div class="card-body items-center text-center">
                 <h2 class="card-title text-6xl">Quality Standard</h2>
                 <p>If a dog chews shoes whose shoes does he choose?</p>
@@ -25,7 +25,7 @@ const Section3 = () => {
                 </div>
               </div>
             </div>
-            <div class="card w-96  hover:bg-cyan-700 hover:text-white border-2 shadow-xl ">
+            <div class="card w-96  hover:bg-gradient-to-r from-cyan-500 to-blue-500 hover:text-white border-2 shadow-xl ">
               <div class="card-body items-center text-center">
                 <h2 class="card-title text-6xl">Productive Capacity</h2>
                 <p>If a dog chews shoes whose shoes does he choose?</p>

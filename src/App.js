@@ -29,4 +29,6 @@ https://i.ibb.co/qxVBRDX/bike5.png
 https://i.ibb.co/1Z7Tccj/bike6.png
 https://i.ibb.co/xgpn0XS/bike7.jpg
 https://i.ibb.co/MCnvMS2/bike8.jpg
+https://i.ibb.co/cDqnr8V/26-inch-Steel-frame-shock-fork-27.jpg
+https://i.ibb.co/ccBpGks/bike2.jpg
 */
