@@ -3,8 +3,10 @@ import "./App.css";
 import About from "./Pages/About/About";
 import Home from "./Pages/Home.js/Home";
 import Login from "./Pages/Login/Login";
+import SignUp from "./Pages/Login/SignUp";
 import Purchase from "./Pages/Purchase/Purchase";
 import Navbar from "./Pages/Shared/Navbar";
+import RequireAuth from "./Pages/Shared/RequireAuth";
 
 function App() {
   return (
@@ -14,9 +16,14 @@ function App() {
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/signup" element={<SignUp></SignUp>}></Route>
         <Route
           path="/purchase/:purchaseId"
-          element={<Purchase></Purchase>}
+          element={
+            <RequireAuth>
+              <Purchase></Purchase>
+            </RequireAuth>
+          }
         ></Route>
       </Routes>
     </div>
