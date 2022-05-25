@@ -20,16 +20,17 @@ const Purchase = () => {
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, []);
+
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-2">
-      <div class="card w-96 bg-base-100 shadow-xl mx-auto lg:mt-24 sm:mb-10 ">
+      <div class="card h-96  bg-base-100 shadow-xl mx-auto lg:mt-24 sm:mb-10 ">
         <div class="card-body items-center justify-center text-center ">
           <figure class="">
             <img src={product.img} alt="Shoes" class="rounded-xl" />
           </figure>
           <h2 class="card-title font-bold">{product.name}</h2>
           <p>{product.description}</p>
-          <p className="font-bold">Price: ${product.price}</p>
+          <p className="font-bold">Price: {product.price}</p>
           <div class="card-actions"></div>
         </div>
       </div>
@@ -42,13 +43,14 @@ const Purchase = () => {
                   Purchase The Product
                 </h2>
                 <label class="label">
-                  <span class="label-text">Product Name</span>
+                  <span class="label-text">Your Name</span>
                 </label>
                 <input
                   type="text"
+                  name="name"
                   placeholder="name"
                   class="input input-bordered w-full max-w-xs font-bold"
-                  {...register("email", {
+                  {...register("name", {
                     // required: {
                     //   value: true,
                     //   message: "Email is Required",
@@ -62,13 +64,14 @@ const Purchase = () => {
               </div>
               <div class="form-control w-full max-w-xs">
                 <label class="label">
-                  <span class="label-text">Password</span>
+                  <span class="label-text">Email</span>
                 </label>
                 <input
-                  type="password"
-                  placeholder="Password"
-                  class="input input-bordered w-full max-w-xs"
-                  {...register("password", {
+                  type="email"
+                  name="email"
+                  placeholder="email"
+                  class="input input-bordered w-full max-w-xs font-bold"
+                  {...register("email", {
                     // required: {
                     //   value: true,
                     //   message: "password is Required",
@@ -82,13 +85,15 @@ const Purchase = () => {
               </div>
               <div class="form-control w-full max-w-xs">
                 <label class="label">
-                  <span class="label-text">Password</span>
+                  <span class="label-text">Product</span>
                 </label>
                 <input
-                  type="password"
-                  placeholder="Password"
-                  class="input input-bordered w-full max-w-xs"
-                  {...register("password", {
+                  type="text"
+                  value={product.name}
+                  name="product"
+                  placeholder="product"
+                  class="input input-bordered w-full max-w-xs font-bold"
+                  {...register("product", {
                     // required: {
                     //   value: true,
                     //   message: "password is Required",
@@ -102,13 +107,14 @@ const Purchase = () => {
               </div>
               <div class="form-control w-full max-w-xs">
                 <label class="label">
-                  <span class="label-text">Password</span>
+                  <span class="label-text">Available Stock</span>
                 </label>
                 <input
-                  type="password"
-                  placeholder="Password"
+                  type="number"
+                  name="availablestock"
+                  placeholder="available quantity"
                   class="input input-bordered w-full max-w-xs"
-                  {...register("password", {
+                  {...register("quantity", {
                     // required: {
                     //   value: true,
                     //   message: "password is Required",
@@ -122,13 +128,78 @@ const Purchase = () => {
               </div>
               <div class="form-control w-full max-w-xs">
                 <label class="label">
-                  <span class="label-text">Password</span>
+                  <span class="label-text">Min Order Quantity</span>
                 </label>
                 <input
-                  type="password"
-                  placeholder="Password"
+                  type="number"
+                  name="minorderquantity"
+                  placeholder="min order quantity"
                   class="input input-bordered w-full max-w-xs"
-                  {...register("password", {
+                  {...register("minorderquantity", {
+                    // required: {
+                    //   value: true,
+                    //   message: "password is Required",
+                    // },
+                    // minLength: {
+                    //   value: 6,
+                    //   message: "Must be 6 characters or longer",
+                    // },
+                  })}
+                />
+              </div>
+              <div class="form-control w-full max-w-xs">
+                <label class="label">
+                  <span class="label-text">Price</span>
+                </label>
+                <input
+                  type="number"
+                  name="price"
+                  value={product.price}
+                  placeholder="$price"
+                  class="input input-bordered w-full max-w-xs"
+                  {...register("price", {
+                    // required: {
+                    //   value: true,
+                    //   message: "password is Required",
+                    // },
+                    // minLength: {
+                    //   value: 6,
+                    //   message: "Must be 6 characters or longer",
+                    // },
+                  })}
+                />
+              </div>
+              <div class="form-control w-full max-w-xs">
+                <label class="label">
+                  <span class="label-text">Address</span>
+                </label>
+                <input
+                  type="text"
+                  name="address"
+                  placeholder="Address"
+                  class="input input-bordered w-full max-w-xs"
+                  {...register("address", {
+                    // required: {
+                    //   value: true,
+                    //   message: "password is Required",
+                    // },
+                    // minLength: {
+                    //   value: 6,
+                    //   message: "Must be 6 characters or longer",
+                    // },
+                  })}
+                />
+              </div>
+              <div class="form-control w-full max-w-xs">
+                <label class="label">
+                  <span class="label-text">Phone Number</span>
+                </label>
+                <input
+                  type="number"
+                  name="phone"
+                  placeholder="Phone"
+                  class="input input-bordered w-full max-w-xs"
+                  {...register("phone", {
                     // required: {
                     //   value: true,
                     //   message: "password is Required",
