@@ -1,31 +1,31 @@
-import React from "react";
-import { FcGoogle } from "react-icons/fc";
+import React from "react"
+import { FcGoogle } from "react-icons/fc"
 import {
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
-} from "react-firebase-hooks/auth";
-import auth from "../../firebase.init";
-import { useForm } from "react-hook-form";
-import Loading from "../Shared/Loading";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+} from "react-firebase-hooks/auth"
+import auth from "../../firebase.init"
+import { useForm } from "react-hook-form"
+import Loading from "../Shared/Loading"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 
 const Login = () => {
-  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth)
   const {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm();
+  } = useForm()
   const [signInWithEmailAndPassword, user, loading, error] =
-    useSignInWithEmailAndPassword(auth);
+    useSignInWithEmailAndPassword(auth)
 
-  let signInErrorMessage;
-  let navigate = useNavigate();
-  let location = useLocation();
-  let from = location.state?.from?.pathname || "/";
+  let signInErrorMessage
+  let navigate = useNavigate()
+  let location = useLocation()
+  let from = location.state?.from?.pathname || "/"
 
   if (loading || gLoading) {
-    return <Loading></Loading>;
+    return <Loading></Loading>
   }
 
   if (error || gError) {
@@ -33,15 +33,14 @@ const Login = () => {
       <p className="text-red-500">
         <small>{error?.message || gError?.message}</small>
       </p>
-    );
+    )
   }
 
-  const onSubmit = (data) => {
-    console.log(data);
-    signInWithEmailAndPassword(data.email, data.password);
-  };
+  const onSubmit = async (data) => {
+    await signInWithEmailAndPassword(data.email, data.password)
+  }
   if (user || gUser) {
-    navigate(from, { replace: true });
+    navigate(from, { replace: true })
   }
   return (
     <div className="flex h-screen justify-center items-center">
@@ -138,7 +137,7 @@ const Login = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login

@@ -1,21 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react"
 
-import { useParams } from "react-router-dom";
-import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "../../firebase.init";
-import axios from "axios";
-import { toast, ToastContainer } from "react-toastify";
+import { useParams } from "react-router-dom"
+import { useAuthState } from "react-firebase-hooks/auth"
+import auth from "../../firebase.init"
+import axios from "axios"
+import { toast } from "react-toastify"
 
 const Purchase = () => {
-  const { purchaseId } = useParams();
-  const [product, setProduct] = useState({});
-  const [user, loading, error] = useAuthState(auth);
+  const { purchaseId } = useParams()
+  const [product, setProduct] = useState({})
+  const [user, loading, error] = useAuthState(auth)
   if (user) {
-    console.log(user);
   }
 
   const onSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault()
     const order = {
       name: user.displayName,
       email: user.email,
@@ -23,21 +22,21 @@ const Purchase = () => {
       purchaseId: purchaseId,
       address: event.target.address.value,
       phone: event.target.phone.value,
-    };
+    }
     axios.post("http://localhost:5000/order", order).then((response) => {
-      const { data } = response;
+      const { data } = response
       if (data.insertedId) {
-        toast("Your Order is Booked!!!");
-        event.target.reset();
+        toast("Your Order is Booked!!!")
+        event.target.reset()
       }
-    });
-  };
+    })
+  }
   useEffect(() => {
-    const url = `http://localhost:5000/purchase/${purchaseId}`;
+    const url = `http://localhost:5000/purchase/${purchaseId}`
     fetch(url, {})
       .then((res) => res.json())
-      .then((data) => setProduct(data));
-  }, []);
+      .then((data) => setProduct(data))
+  }, [])
 
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-2">
@@ -167,10 +166,10 @@ const Purchase = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Purchase;
+export default Purchase
 
 //  {...register("name", {
 //                   // required: {

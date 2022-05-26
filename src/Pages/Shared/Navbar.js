@@ -27,9 +27,11 @@ const Navbar = () => {
         <Link to="/blogs">Blogs</Link>
       </li>
 
-      <li>
-        <Link to="/dashboard">Dashboard</Link>
-      </li>
+      {user && (
+        <li>
+          <Link to="/dashboard">Dashboard</Link>
+        </li>
+      )}
       <li>
         {user ? (
           <button class="btn btn-ghost" onClick={logout}>
@@ -42,7 +44,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div class="navbar">
+    <div class="navbar justify-between">
       <div class="navbar-start">
         <div class="dropdown">
           <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -74,8 +76,27 @@ const Navbar = () => {
           <span className="text-3xl">CTGBIKE</span>
         </a>
       </div>
-      <div class="navbar-end hidden lg:flex">
-        <ul class="menu menu-horizontal p-0">{navbarItems}</ul>
+
+      <div className="navbar-end">
+        <div class="navbar-end hidden lg:flex">
+          <ul class="menu menu-horizontal p-0">{navbarItems}</ul>
+        </div>
+        <label tabindex="1" for="sidebar" class="btn btn-ghost lg:hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h8m-8 6h16"
+            />
+          </svg>
+        </label>
       </div>
     </div>
   );

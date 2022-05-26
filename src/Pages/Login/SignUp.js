@@ -1,32 +1,37 @@
-import React from "react";
-import { FcGoogle } from "react-icons/fc";
+import React from "react"
+import { FcGoogle } from "react-icons/fc"
 
 import {
   useCreateUserWithEmailAndPassword,
   useSignInWithGoogle,
   useUpdateProfile,
-} from "react-firebase-hooks/auth";
-import auth from "../../firebase.init";
-import { useForm } from "react-hook-form";
-import Loading from "../Shared/Loading";
-import { Link, useNavigate } from "react-router-dom";
+} from "react-firebase-hooks/auth"
+import auth from "../../firebase.init"
+import { useForm } from "react-hook-form"
+import Loading from "../Shared/Loading"
+import { Link, useNavigate } from "react-router-dom"
+import useToken from "../../hooks/useToken"
+// import useToken from "../../hooks/useToken"
+// import useToken from "../../hooks/useToken"
 
 const SignUp = () => {
-  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth)
   const {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm();
+  } = useForm()
   const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
-  const [updateProfile, updating, updatingerror] = useUpdateProfile(auth);
-  const navigate = useNavigate();
+    useCreateUserWithEmailAndPassword(auth)
+  const [updateProfile, updating, updatingerror] = useUpdateProfile(auth)
 
-  let signInErrorMessage;
+  const [users] = useToken(user || gUser)
+  const navigate = useNavigate()
+
+  let signInErrorMessage
 
   if (loading || gLoading || updating) {
-    return <Loading></Loading>;
+    return <Loading></Loading>
   }
 
   if (error || gError || updatingerror) {
@@ -36,18 +41,18 @@ const SignUp = () => {
           {error?.message || gError?.message || updatingerror?.message}
         </small>
       </p>
-    );
+    )
   }
 
   const onSubmit = async (data) => {
-    console.log(data);
-    await createUserWithEmailAndPassword(data.email, data.password);
-    await updateProfile({ displayName: data.name });
-    console.log("update done");
-    navigate("/");
-  };
-  if (user || gUser) {
-    console.log(user || gUser);
+    console.log(data)
+    await createUserWithEmailAndPassword(data.email, data.password)
+    await updateProfile({ displayName: data.name })
+    console.log("update done")
+    navigate("/")
+  }
+  if (users) {
+    navigate("/")
   }
   return (
     <div className="flex h-screen justify-center items-center">
@@ -167,7 +172,7 @@ const SignUp = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SignUp;
+export default SignUp
