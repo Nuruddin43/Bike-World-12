@@ -1,16 +1,16 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import logo from "../../images/logo-1-removebg-preview.png";
-import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "../../firebase.init";
-import { signOut } from "firebase/auth";
+import React from "react"
+import { Link } from "react-router-dom"
+import logo from "../../images/logo-1-removebg-preview.png"
+import { useAuthState } from "react-firebase-hooks/auth"
+import auth from "../../firebase.init"
+import { signOut } from "firebase/auth"
 
 const Navbar = () => {
-  const [user] = useAuthState(auth);
+  const [user] = useAuthState(auth)
 
   const logout = () => {
-    signOut(auth);
-  };
+    signOut(auth)
+  }
 
   const navbarItems = (
     <>
@@ -25,6 +25,9 @@ const Navbar = () => {
       </li>
       <li>
         <Link to="/blogs">Blogs</Link>
+      </li>
+      <li>
+        <Link to="/myportfolio">MyPortfo</Link>
       </li>
 
       {user && (
@@ -42,7 +45,7 @@ const Navbar = () => {
         )}
       </li>
     </>
-  );
+  )
   return (
     <div class="navbar justify-between">
       <div class="navbar-start">
@@ -99,7 +102,7 @@ const Navbar = () => {
         </label>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

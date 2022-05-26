@@ -18,6 +18,7 @@ import MakeAdmin from "./Pages/Dashboard/MakeAdmin"
 import AddAReview from "./Pages/Dashboard/AddAReview"
 import RequireAdmin from "./Pages/Login/RequireAdmin"
 import AddAProduct from "./Pages/Dashboard/AddAProduct"
+import MyPortfolio from "./Pages/Blogs/MyPortfolio/MyPortfolio"
 
 function App() {
   return (
@@ -29,6 +30,10 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
         <Route path="/review" element={<Reviews></Reviews>}></Route>
+        <Route
+          path="/myportfolio"
+          element={<MyPortfolio></MyPortfolio>}
+        ></Route>
         <Route
           path="/purchase/:purchaseId"
           element={
