@@ -1,10 +1,14 @@
 import React from "react"
 import { useQuery } from "react-query"
 import Loading from "../Shared/Loading"
-import MyProfileRow from "./MyProfileRow"
+import MakeAdminRow from "./MakeAdminRow"
 
-const MyProfile = () => {
-  const { data: users, isLoading } = useQuery("users", () =>
+const MakeAdmin = () => {
+  const {
+    data: users,
+    isLoading,
+    refetch,
+  } = useQuery("users", () =>
     fetch("http://localhost:5000/user").then((res) => res.json())
   )
   if (isLoading) {
@@ -25,7 +29,11 @@ const MyProfile = () => {
           </thead>
           <tbody>
             {users.map((user) => (
-              <MyProfileRow key={user._id} user={user}></MyProfileRow>
+              <MakeAdminRow
+                key={user._id}
+                user={user}
+                refetch={refetch}
+              ></MakeAdminRow>
             ))}
           </tbody>
         </table>
@@ -34,4 +42,4 @@ const MyProfile = () => {
   )
 }
 
-export default MyProfile
+export default MakeAdmin

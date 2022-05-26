@@ -1,21 +1,23 @@
-import { Route, Routes } from "react-router-dom";
-import "./App.css";
-import About from "./Pages/About/About";
-import Home from "./Pages/Home.js/Home";
-import Reviews from "./Pages/Home.js/Reviews";
-import Login from "./Pages/Login/Login";
-import SignUp from "./Pages/Login/SignUp";
-import Purchase from "./Pages/Purchase/Purchase";
-import Navbar from "./Pages/Shared/Navbar";
-import NotFound from "./Pages/Shared/NotFound";
-import RequireAuth from "./Pages/Shared/RequireAuth";
-import Blogs from "./Pages/Blogs/Blogs";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import Dashboard from "./Pages/Dashboard/Dashboard";
-import MyOrders from "./Pages/Dashboard/MyOrders";
-import MyProfile from "./Pages/Dashboard/MyProfile";
-import AddAReview from "./Pages/Dashboard/AddAReview";
+import { Route, Routes } from "react-router-dom"
+import "./App.css"
+import About from "./Pages/About/About"
+import Home from "./Pages/Home.js/Home"
+import Reviews from "./Pages/Home.js/Reviews"
+import Login from "./Pages/Login/Login"
+import SignUp from "./Pages/Login/SignUp"
+import Purchase from "./Pages/Purchase/Purchase"
+import Navbar from "./Pages/Shared/Navbar"
+import NotFound from "./Pages/Shared/NotFound"
+import RequireAuth from "./Pages/Shared/RequireAuth"
+import Blogs from "./Pages/Blogs/Blogs"
+import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
+import Dashboard from "./Pages/Dashboard/Dashboard"
+import MyOrders from "./Pages/Dashboard/MyOrders"
+import MakeAdmin from "./Pages/Dashboard/MakeAdmin"
+import AddAReview from "./Pages/Dashboard/AddAReview"
+import RequireAdmin from "./Pages/Login/RequireAdmin"
+import AddAProduct from "./Pages/Dashboard/AddAProduct"
 
 function App() {
   return (
@@ -45,17 +47,32 @@ function App() {
         >
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path="addareview" element={<AddAReview></AddAReview>}></Route>
-          <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>
+          <Route
+            path="MakeAdmin"
+            element={
+              <RequireAdmin>
+                <MakeAdmin></MakeAdmin>
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="addaproduct"
+            element={
+              <RequireAdmin>
+                <AddAProduct></AddAProduct>
+              </RequireAdmin>
+            }
+          ></Route>
         </Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <ToastContainer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
 
 /* Bicycle
 https://i.ibb.co/Y7VHMjL/bike1.jpg
