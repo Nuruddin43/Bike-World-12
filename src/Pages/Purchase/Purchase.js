@@ -5,10 +5,12 @@ import { useAuthState } from "react-firebase-hooks/auth"
 import auth from "../../firebase.init"
 import axios from "axios"
 import { toast } from "react-toastify"
+import { useForm } from "react-hook-form"
 
 const Purchase = () => {
   const { purchaseId } = useParams()
   const [product, setProduct] = useState({})
+  const { register } = useForm()
   const [user, loading, error] = useAuthState(auth)
   if (user) {
   }
@@ -22,6 +24,7 @@ const Purchase = () => {
       purchaseId: purchaseId,
       quantity: event.target.quantity.value,
       order: event.target.order.value,
+      price: event.target.price.value,
       address: event.target.address.value,
       phone: event.target.phone.value,
     }
@@ -71,6 +74,9 @@ const Purchase = () => {
                   readOnly
                   placeholder="name"
                   class="input input-bordered w-full max-w-xs font-bold"
+                  {...register("name", {
+                    required: true,
+                  })}
                 />
               </div>
               <div class="form-control w-full max-w-xs">
@@ -84,6 +90,9 @@ const Purchase = () => {
                   value={user?.email}
                   placeholder="email"
                   class="input input-bordered w-full max-w-xs font-bold"
+                  {...register("email", {
+                    required: true,
+                  })}
                 />
               </div>
               <div class="form-control w-full max-w-xs">
@@ -108,6 +117,13 @@ const Purchase = () => {
                   name="quantity"
                   placeholder="available quantity"
                   class="input input-bordered w-full max-w-xs font-bold"
+                  {...register(
+                    "quantity",
+                    {
+                      required: true,
+                    },
+                    { min: 1, max: 5 }
+                  )}
                 />
               </div>
               <div class="form-control w-full max-w-xs">
@@ -116,10 +132,16 @@ const Purchase = () => {
                 </label>
                 <input
                   type="number"
-                  value={product.minquantity}
                   name="order"
                   placeholder="min order quantity"
                   class="input input-bordered w-full max-w-xs font-bold"
+                  {...register(
+                    "order",
+                    {
+                      required: true,
+                    },
+                    { min: 1, max: 5 }
+                  )}
                 />
               </div>
 
@@ -128,11 +150,18 @@ const Purchase = () => {
                   <span class="label-text">Price</span>
                 </label>
                 <input
-                  type="number"
+                  type="text"
                   name="price"
                   value={product.price}
                   placeholder="$price"
                   class="input input-bordered w-full max-w-xs font-bold"
+                  {...register(
+                    "price",
+                    {
+                      required: true,
+                    },
+                    { min: 1, max: 5 }
+                  )}
                 />
               </div>
               <div class="form-control w-full max-w-xs">
@@ -144,6 +173,9 @@ const Purchase = () => {
                   name="address"
                   placeholder="Address"
                   class="input input-bordered w-full max-w-xs font-bold"
+                  {...register("address", {
+                    required: true,
+                  })}
                 />
               </div>
               <div class="form-control w-full max-w-xs">
@@ -155,6 +187,9 @@ const Purchase = () => {
                   name="phone"
                   placeholder="Phone"
                   class="input input-bordered w-full max-w-xs font-bold"
+                  {...register("phone", {
+                    required: true,
+                  })}
                 />
               </div>
 
@@ -172,7 +207,3 @@ const Purchase = () => {
 }
 
 export default Purchase
-
-//  {...register("name", {
-//                  required: true
-//                 })}

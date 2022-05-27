@@ -21,6 +21,7 @@ import AddAProduct from "./Pages/Dashboard/AddAProduct"
 import MyPortfolio from "./Pages/Blogs/MyPortfolio/MyPortfolio"
 import ManageAllOrders from "./Pages/Dashboard/ManageAllOrders"
 import ManageProducts from "./Pages/Dashboard/ManageProducts"
+import Payment from "./Pages/Dashboard/Payment"
 // import Review from "./Pages/Home.js/Review"
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
-        <Route path="/review/:reviewId" element={<Reviews></Reviews>}></Route>
+        <Route path="/review" element={<Reviews></Reviews>}></Route>
 
         <Route
           path="/myportfolio"
@@ -56,6 +57,7 @@ function App() {
         >
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path="addareview" element={<AddAReview></AddAReview>}></Route>
+          <Route path="payment/:id" element={<Payment></Payment>}></Route>
           <Route
             path="MakeAdmin"
             element={

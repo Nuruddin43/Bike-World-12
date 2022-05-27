@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import axios from "axios"
 import { useAuthState } from "react-firebase-hooks/auth"
 import auth from "../../firebase.init"
+import { Link } from "react-router-dom"
 
 const MyOrders = () => {
   const [user] = useAuthState(auth)
@@ -26,7 +27,9 @@ const MyOrders = () => {
               <th>Name</th>
               <th>Email</th>
               <th>Product</th>
+              <th>Price</th>
               <th>Phone</th>
+              <th>Payment</th>
             </tr>
           </thead>
           <tbody>
@@ -36,7 +39,18 @@ const MyOrders = () => {
                 <td>{user.displayName}</td>
                 <td>{user.email}</td>
                 <td>{o.product}</td>
+                <td>{o.price}</td>
                 <td>{o.phone}</td>
+                <td>
+                  {o.price && !o.paid && (
+                    <Link to={`/dashboard/payment/${o._id}`}>
+                      <button className="btn btn-sm btn-success">Pay</button>
+                    </Link>
+                  )}
+                  {o.price && o.paid && (
+                    <span className="btn btn-sm btn-success">Paid</span>
+                  )}
+                </td>
               </tr>
             ))}
           </tbody>
