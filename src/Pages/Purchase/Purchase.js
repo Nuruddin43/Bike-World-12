@@ -20,6 +20,8 @@ const Purchase = () => {
       email: user.email,
       product: product.name,
       purchaseId: purchaseId,
+      quantity: event.target.quantity.value,
+      order: event.target.order.value,
       address: event.target.address.value,
       phone: event.target.phone.value,
     }
@@ -103,7 +105,7 @@ const Purchase = () => {
                 <input
                   type="number"
                   value={product.instock}
-                  name="availablestock"
+                  name="quantity"
                   placeholder="available quantity"
                   class="input input-bordered w-full max-w-xs font-bold"
                 />
@@ -115,7 +117,7 @@ const Purchase = () => {
                 <input
                   type="number"
                   value={product.minquantity}
-                  name="minorderquantity"
+                  name="order"
                   placeholder="min order quantity"
                   class="input input-bordered w-full max-w-xs font-bold"
                 />
@@ -172,12 +174,5 @@ const Purchase = () => {
 export default Purchase
 
 //  {...register("name", {
-//                   // required: {
-//                   //   value: true,
-//                   //   message: "Email is Required",
-//                   // },
-//                   // pattern: {
-//                   //   value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-//                   //   message: "Provide a valid Email",
-//                   // },
+//                  required: true
 //                 })}
