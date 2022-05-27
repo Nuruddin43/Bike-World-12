@@ -29,6 +29,8 @@ const AddAProduct = () => {
         if (data.insertedId) {
           toast("Product is succesfully added!!!")
           event.target.reset()
+        } else {
+          toast.error("Failed to add the product")
         }
       })
   }

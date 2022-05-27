@@ -2,36 +2,19 @@ import React, { useEffect, useState } from "react"
 import { useAuthState } from "react-firebase-hooks/auth"
 import { useNavigate } from "react-router-dom"
 import auth from "../../firebase.init"
+import DeleteConfirmModal from "./DeleteConfirmModal"
 
 const ManageProducts = () => {
+  const [deletingDoctor, setDeletingDoctor] = useState(null)
   const [products, setProducts] = useState([])
   const navigate = useNavigate()
+
   const [user] = useAuthState(auth)
   useEffect(() => {
-    fetch("http://localhost:5000/product")
+    fetch("http://localhost:5000/newProduct")
       .then((res) => res.json())
       .then((data) => setProducts(data))
   }, [])
-
-  const handleDelete = (id) => {
-    const proceed = window.confirm("Are you sure to delete?")
-    if (proceed) {
-      console.log("deleted", id)
-      const url = `http://localhost:5000/product/${id}`
-      fetch(url, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.deletedCount > 0) {
-            console.log("deleted")
-            const remaining = products.filter((product) => products._id !== id)
-            setProducts(remaining)
-          }
-        })
-    }
-    window.location.reload()
-  }
 
   const navigateToAddItem = () => {
     navigate("/dashboard/addaproduct")
@@ -52,22 +35,23 @@ const ManageProducts = () => {
           </thead>
           <tbody>
             {products.map((p) => (
-              <tr key={p._id}>
+              <tr key={p._id} setDeletingDoctor={setDeletingDoctor}>
                 <td>
                   <img className="w-24 rounded-md" src={p.img} alt="" />
                 </td>
                 <td>{p.name}</td>
                 <td>{p.price}</td>
-                <td>{p.instock}</td>
-                <td>{p.minquantity}</td>
+                <td>{p.quantity}</td>
+                <td>{p.order}</td>
                 <td>
                   <div>
-                    <button
-                      className="btn border-0"
-                      onClick={() => handleDelete(p._id)}
+                    <label
+                      onClick={() => setDeletingDoctor(p)}
+                      for="my-modal-6"
+                      class="btn btn-xs btn-error border-0"
                     >
                       Delete
-                    </button>
+                    </label>
                   </div>
                 </td>
               </tr>
@@ -81,6 +65,12 @@ const ManageProducts = () => {
           Add Product
         </button>
       </div>
+      {deletingDoctor && (
+        <DeleteConfirmModal
+          deletingDoctor={deletingDoctor}
+          setDeletingDoctor={setDeletingDoctor}
+        ></DeleteConfirmModal>
+      )}
     </div>
   )
 }
