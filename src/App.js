@@ -22,6 +22,7 @@ import MyPortfolio from "./Pages/Blogs/MyPortfolio/MyPortfolio"
 import ManageAllOrders from "./Pages/Dashboard/ManageAllOrders"
 import ManageProducts from "./Pages/Dashboard/ManageProducts"
 import Payment from "./Pages/Dashboard/Payment"
+import MyProfile from "./Pages/Dashboard/MyProfile"
 // import Review from "./Pages/Home.js/Review"
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
         >
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path="addareview" element={<AddAReview></AddAReview>}></Route>
+          <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>
           <Route path="payment/:id" element={<Payment></Payment>}></Route>
           <Route
             path="MakeAdmin"
