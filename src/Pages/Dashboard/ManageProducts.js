@@ -21,8 +21,8 @@ const ManageProducts = () => {
   }
   return (
     <div>
-      <div class="overflow-x-auto">
-        <table class="table table-zebra w-full">
+      <div className="overflow-x-auto">
+        <table className="table table-zebra w-full">
           <thead>
             <tr>
               <th>Images</th>
@@ -47,8 +47,8 @@ const ManageProducts = () => {
                   <div>
                     <label
                       onClick={() => setDeletingDoctor(p)}
-                      for="my-modal-6"
-                      class="btn btn-xs btn-error border-0"
+                      htmlFor="my-modal-6"
+                      className="btn btn-xs btn-error border-0"
                     >
                       Delete
                     </label>

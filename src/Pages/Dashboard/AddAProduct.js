@@ -35,51 +35,51 @@ const AddAProduct = () => {
       })
   }
   return (
-    <div class="hero">
-      <div class="card w-96 bg-base-100 shadow-xl ">
-        <div class="card-body">
+    <div className="hero">
+      <div className="card w-96 bg-base-100 shadow-xl ">
+        <div className="card-body">
           <form onSubmit={onSubmit}>
-            <div class="form-control w-full max-w-xs">
+            <div className="form-control w-full max-w-xs">
               <h2 className="text-4xl text-center font-bold">
                 Add new product
               </h2>
-              <label class="label">
-                <span class="label-text">Photo URL</span>
+              <label className="label">
+                <span className="label-text">Photo URL</span>
               </label>
               <input
                 type="text"
                 name="img"
                 placeholder="Photo URL"
-                class="input input-bordered w-full max-w-xs font-bold pt-2"
+                className="input input-bordered w-full max-w-xs font-bold pt-2"
                 {...register("img", {
                   required: true,
                 })}
               />
             </div>
 
-            <div class="form-control w-full max-w-xs">
-              <label class="label">
-                <span class="label-text">Product Name</span>
+            <div className="form-control w-full max-w-xs">
+              <label className="label">
+                <span className="label-text">Product Name</span>
               </label>
               <input
                 type="text"
                 name="name"
                 placeholder="Product Name"
-                class="input input-bordered w-full max-w-xs font-bold"
+                className="input input-bordered w-full max-w-xs font-bold"
                 {...register("name", {
                   required: true,
                 })}
               />
             </div>
-            <div class="form-control w-full max-w-xs">
-              <label class="label">
-                <span class="label-text">Price</span>
+            <div className="form-control w-full max-w-xs">
+              <label className="label">
+                <span className="label-text">Price</span>
               </label>
               <input
                 type="text"
                 name="price"
                 placeholder="Price"
-                class="input input-bordered w-full max-w-xs font-bold"
+                className="input input-bordered w-full max-w-xs font-bold"
                 {...register(
                   "price",
                   {
@@ -89,15 +89,15 @@ const AddAProduct = () => {
                 )}
               />
             </div>
-            <div class="form-control w-full max-w-xs">
-              <label class="label">
-                <span class="label-text">Description</span>
+            <div className="form-control w-full max-w-xs">
+              <label className="label">
+                <span className="label-text">Description</span>
               </label>
               <textarea
                 type="text"
                 name="description"
                 placeholder="Description"
-                class="textarea textarea-bordered w-full max-w-xs font-bold"
+                className="textarea textarea-bordered w-full max-w-xs font-bold"
                 {...register(
                   "description",
                   {
@@ -107,15 +107,15 @@ const AddAProduct = () => {
                 )}
               />
             </div>
-            <div class="form-control w-full max-w-xs">
-              <label class="label">
-                <span class="label-text">Available Stock</span>
+            <div className="form-control w-full max-w-xs">
+              <label className="label">
+                <span className="label-text">Available Stock</span>
               </label>
               <input
                 type="number"
                 name="quantity"
                 placeholder="available quantity"
-                class="input input-bordered w-full max-w-xs font-bold"
+                className="input input-bordered w-full max-w-xs font-bold"
                 {...register(
                   "quantity",
                   {
@@ -125,15 +125,15 @@ const AddAProduct = () => {
                 )}
               />
             </div>
-            <div class="form-control w-full max-w-xs">
-              <label class="label">
-                <span class="label-text">Min Order Quantity</span>
+            <div className="form-control w-full max-w-xs">
+              <label className="label">
+                <span className="label-text">Min Order Quantity</span>
               </label>
               <input
                 type="number"
                 name="order"
                 placeholder="min order quantity"
-                class="input input-bordered w-full max-w-xs font-bold"
+                className="input input-bordered w-full max-w-xs font-bold"
                 {...register(
                   "order",
                   {

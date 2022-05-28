@@ -21,12 +21,12 @@ const MyProfile = () => {
 
   return (
     <div>
-      <div class="card w-96 mx-auto bg-base-100 shadow-xl">
-        <div class="card-body">
+      <div className="card w-96 mx-auto bg-base-100 shadow-xl">
+        <div className="card-body">
           <h2 className="text-2xl">My Profile</h2>
           <label
             onChange={() => setProfile(user)}
-            htmlFor="profile-modal"
+            htmlhtmlFor="profile-modal"
             className="btn border-0 font-bold"
           >
             Edit

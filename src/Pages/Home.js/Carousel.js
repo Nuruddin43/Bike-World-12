@@ -1,15 +1,15 @@
-import React from "react";
-import carousel2 from "../../images/carousel/carousel2.jpg";
-import carousel3 from "../../images/carousel/carousel3.jpg";
-import carousel4 from "../../images/carousel/carousel4.jpg";
+import React from "react"
+import carousel2 from "../../images/carousel/carousel2.jpg"
+import carousel3 from "../../images/carousel/carousel3.jpg"
+import carousel4 from "../../images/carousel/carousel4.jpg"
 
 const Carousel = () => {
   return (
-    <div class="carousel w-full">
-      <div id="slide2" class="carousel-item relative w-full">
-        <img src={carousel2} class="w-full" />
-        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide1" class="btn btn-circle">
+    <div className="carousel w-full">
+      <div id="slide2" className="carousel-item relative w-full">
+        <img src={carousel2} className="w-full" />
+        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide1" className="btn btn-circle">
             ❮
           </a>
           <div className="text-white text-center">
@@ -27,16 +27,16 @@ const Carousel = () => {
             <br />
             <h2 className="text-2xl"> Original Since 2003</h2>
           </div>
-          <a href="#slide3" class="btn btn-circle">
+          <a href="#slide3" className="btn btn-circle">
             ❯
           </a>
         </div>
         <div></div>
       </div>
-      <div id="slide3" class="carousel-item relative w-full">
-        <img src={carousel3} class="w-full" />
-        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide2" class="btn btn-circle">
+      <div id="slide3" className="carousel-item relative w-full">
+        <img src={carousel3} className="w-full" />
+        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide2" className="btn btn-circle">
             ❮
           </a>
           <div className="text-white text-center">
@@ -54,15 +54,15 @@ const Carousel = () => {
             <br />
             <h2 className="text-2xl"> Original Since 2003</h2>
           </div>
-          <a href="#slide4" class="btn btn-circle">
+          <a href="#slide4" className="btn btn-circle">
             ❯
           </a>
         </div>
       </div>
-      <div id="slide4" class="carousel-item relative w-full">
-        <img src={carousel4} class="w-full" />
-        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide3" class="btn btn-circle">
+      <div id="slide4" className="carousel-item relative w-full">
+        <img src={carousel4} className="w-full" />
+        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide3" className="btn btn-circle">
             ❮
           </a>
           <div className="text-white text-center">
@@ -80,13 +80,13 @@ const Carousel = () => {
             <br />
             <h2 className="text-2xl"> Original Since 2003</h2>
           </div>
-          <a href="#slide1" class="btn btn-circle">
+          <a href="#slide1" className="btn btn-circle">
             ❯
           </a>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Carousel;
+export default Carousel

@@ -28,12 +28,12 @@ const ProfileModal = () => {
   }
   return (
     <div>
-      <input type="checkbox" id="profile-modal" class="modal-toggle" />
-      <div class="modal">
-        <div class="modal-box">
+      <input type="checkbox" id="profile-modal" className="modal-toggle" />
+      <div className="modal">
+        <div className="modal-box">
           <label
-            for="profile-modal"
-            class="btn btn-sm btn-circle absolute right-2 top-2"
+            htmlFor="profile-modal"
+            className="btn btn-sm btn-circle absolute right-2 top-2"
           >
             X
           </label>

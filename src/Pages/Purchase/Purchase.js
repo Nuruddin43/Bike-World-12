@@ -45,27 +45,27 @@ const Purchase = () => {
 
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-2">
-      <div class="card h-96  bg-base-100 shadow-xl mx-auto lg:mt-24 sm:mb-10 ">
-        <div class="card-body items-center justify-center text-center ">
-          <figure class="">
-            <img src={product.img} alt="Shoes" class="rounded-xl" />
+      <div className="card h-96  bg-base-100 shadow-xl mx-auto lg:mt-24 sm:mb-10 ">
+        <div className="card-body items-center justify-center text-center ">
+          <figure className="">
+            <img src={product.img} alt="Shoes" className="rounded-xl" />
           </figure>
-          <h2 class="card-title font-bold">{product.name}</h2>
+          <h2 className="card-title font-bold">{product.name}</h2>
           <p>{product.description}</p>
           <p className="font-bold">Price: ${product.price}</p>
-          <div class="card-actions"></div>
+          <div className="card-actions"></div>
         </div>
       </div>
-      <div class="hero">
-        <div class="card w-96 bg-base-100 shadow-xl ">
-          <div class="card-body">
+      <div className="hero">
+        <div className="card w-96 bg-base-100 shadow-xl ">
+          <div className="card-body">
             <form onSubmit={onSubmit}>
-              <div class="form-control w-full max-w-xs">
+              <div className="form-control w-full max-w-xs">
                 <h2 className="text-4xl text-center font-bold">
                   Purchase The Product
                 </h2>
-                <label class="label">
-                  <span class="label-text">Your Name</span>
+                <label className="label">
+                  <span className="label-text">Your Name</span>
                 </label>
                 <input
                   type="text"
@@ -73,15 +73,15 @@ const Purchase = () => {
                   value={user?.displayName}
                   readOnly
                   placeholder="name"
-                  class="input input-bordered w-full max-w-xs font-bold"
+                  className="input input-bordered w-full max-w-xs font-bold"
                   {...register("name", {
                     required: true,
                   })}
                 />
               </div>
-              <div class="form-control w-full max-w-xs">
-                <label class="label">
-                  <span class="label-text">Email</span>
+              <div className="form-control w-full max-w-xs">
+                <label className="label">
+                  <span className="label-text">Email</span>
                 </label>
                 <input
                   type="email"
@@ -89,34 +89,34 @@ const Purchase = () => {
                   readOnly
                   value={user?.email}
                   placeholder="email"
-                  class="input input-bordered w-full max-w-xs font-bold"
+                  className="input input-bordered w-full max-w-xs font-bold"
                   {...register("email", {
                     required: true,
                   })}
                 />
               </div>
-              <div class="form-control w-full max-w-xs">
-                <label class="label">
-                  <span class="label-text">Product</span>
+              <div className="form-control w-full max-w-xs">
+                <label className="label">
+                  <span className="label-text">Product</span>
                 </label>
                 <input
                   type="text"
                   value={product.name}
                   name="product"
                   placeholder="product"
-                  class="input input-bordered w-full max-w-xs font-bold"
+                  className="input input-bordered w-full max-w-xs font-bold"
                 />
               </div>
-              <div class="form-control w-full max-w-xs">
-                <label class="label">
-                  <span class="label-text">Available Stock</span>
+              <div className="form-control w-full max-w-xs">
+                <label className="label">
+                  <span className="label-text">Available Stock</span>
                 </label>
                 <input
                   type="number"
                   value={product.instock}
                   name="quantity"
                   placeholder="available quantity"
-                  class="input input-bordered w-full max-w-xs font-bold"
+                  className="input input-bordered w-full max-w-xs font-bold"
                   {...register(
                     "quantity",
                     {
@@ -126,15 +126,15 @@ const Purchase = () => {
                   )}
                 />
               </div>
-              <div class="form-control w-full max-w-xs">
-                <label class="label">
-                  <span class="label-text">Min Order Quantity</span>
+              <div className="form-control w-full max-w-xs">
+                <label className="label">
+                  <span className="label-text">Min Order Quantity</span>
                 </label>
                 <input
                   type="number"
                   name="order"
                   placeholder="min order quantity"
-                  class="input input-bordered w-full max-w-xs font-bold"
+                  className="input input-bordered w-full max-w-xs font-bold"
                   {...register(
                     "order",
                     {
@@ -145,16 +145,16 @@ const Purchase = () => {
                 />
               </div>
 
-              <div class="form-control w-full max-w-xs">
-                <label class="label">
-                  <span class="label-text">Price</span>
+              <div className="form-control w-full max-w-xs">
+                <label className="label">
+                  <span className="label-text">Price</span>
                 </label>
                 <input
                   type="text"
                   name="price"
                   value={product.price}
                   placeholder="$price"
-                  class="input input-bordered w-full max-w-xs font-bold"
+                  className="input input-bordered w-full max-w-xs font-bold"
                   {...register(
                     "price",
                     {
@@ -164,29 +164,29 @@ const Purchase = () => {
                   )}
                 />
               </div>
-              <div class="form-control w-full max-w-xs">
-                <label class="label">
-                  <span class="label-text">Address</span>
+              <div className="form-control w-full max-w-xs">
+                <label className="label">
+                  <span className="label-text">Address</span>
                 </label>
                 <input
                   type="text"
                   name="address"
                   placeholder="Address"
-                  class="input input-bordered w-full max-w-xs font-bold"
+                  className="input input-bordered w-full max-w-xs font-bold"
                   {...register("address", {
                     required: true,
                   })}
                 />
               </div>
-              <div class="form-control w-full max-w-xs">
-                <label class="label">
-                  <span class="label-text">Phone Number</span>
+              <div className="form-control w-full max-w-xs">
+                <label className="label">
+                  <span className="label-text">Phone Number</span>
                 </label>
                 <input
                   type="number"
                   name="phone"
                   placeholder="Phone"
-                  class="input input-bordered w-full max-w-xs font-bold"
+                  className="input input-bordered w-full max-w-xs font-bold"
                   {...register("phone", {
                     required: true,
                   })}

@@ -19,8 +19,8 @@ const MyOrders = () => {
   return (
     <div>
       <h2>total Orders: {orders.length}</h2>
-      <div class="overflow-x-auto px-2">
-        <table class="sm:table table-zebra w-full">
+      <div className="overflow-x-auto px-2">
+        <table className="sm:table table-zebra w-full">
           <thead>
             <tr>
               <th>Id</th>

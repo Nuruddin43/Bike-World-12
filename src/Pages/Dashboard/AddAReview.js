@@ -35,46 +35,46 @@ const AddAReview = () => {
 
   return (
     <div>
-      <div class="hero">
-        <div class="card w-96 bg-base-100 shadow-xl ">
-          <div class="card-body">
+      <div className="hero">
+        <div className="card w-96 bg-base-100 shadow-xl ">
+          <div className="card-body">
             <form onSubmit={onSubmit}>
-              <div class="form-control w-full max-w-xs">
+              <div className="form-control w-full max-w-xs">
                 <h2 className="text-4xl text-center font-bold">
                   Add your review
                 </h2>
-                <label class="label">
-                  <span class="label-text">Photo URL</span>
+                <label className="label">
+                  <span className="label-text">Photo URL</span>
                 </label>
                 <input
                   type="text"
                   name="img"
                   value={user?.photoURL}
                   placeholder="Photo URL"
-                  class="input input-bordered w-full max-w-xs font-bold pt-2"
+                  className="input input-bordered w-full max-w-xs font-bold pt-2"
                   {...register("img", {
                     required: true,
                   })}
                 />
               </div>
-              <div class="form-control w-full max-w-xs">
-                <label class="label">
-                  <span class="label-text">Name</span>
+              <div className="form-control w-full max-w-xs">
+                <label className="label">
+                  <span className="label-text">Name</span>
                 </label>
                 <input
                   type="text"
                   name="name"
                   value={user?.displayName}
                   placeholder="email"
-                  class="input input-bordered w-full max-w-xs font-bold"
+                  className="input input-bordered w-full max-w-xs font-bold"
                   {...register("name", {
                     required: true,
                   })}
                 />
               </div>
-              <div class="form-control w-full max-w-xs">
-                <label class="label">
-                  <span class="label-text">Email</span>
+              <div className="form-control w-full max-w-xs">
+                <label className="label">
+                  <span className="label-text">Email</span>
                 </label>
                 <input
                   type="email"
@@ -82,21 +82,21 @@ const AddAReview = () => {
                   readOnly
                   value={user?.email}
                   placeholder="email"
-                  class="input input-bordered w-full max-w-xs font-bold"
+                  className="input input-bordered w-full max-w-xs font-bold"
                   {...register("email", {
                     required: true,
                   })}
                 />
               </div>
-              <div class="form-control w-full max-w-xs">
-                <label class="label">
-                  <span class="label-text">Ratings</span>
+              <div className="form-control w-full max-w-xs">
+                <label className="label">
+                  <span className="label-text">Ratings</span>
                 </label>
                 <input
                   type="number"
                   name="ratings"
                   placeholder="Ratings"
-                  class="input input-bordered w-full max-w-xs font-bold"
+                  className="input input-bordered w-full max-w-xs font-bold"
                   {...register(
                     "ratings",
                     {
@@ -106,15 +106,15 @@ const AddAReview = () => {
                   )}
                 />
               </div>
-              <div class="form-control w-full max-w-xs">
-                <label class="label">
-                  <span class="label-text">Reviews</span>
+              <div className="form-control w-full max-w-xs">
+                <label className="label">
+                  <span className="label-text">Reviews</span>
                 </label>
                 <textarea
                   type="number"
                   name="reviews"
                   placeholder="Reviews"
-                  class="textarea textarea-bordered w-full max-w-xs font-bold"
+                  className="textarea textarea-bordered w-full max-w-xs font-bold"
                   {...register(
                     "reviews",
                     {
