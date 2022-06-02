@@ -11,7 +11,7 @@ const ManageProducts = () => {
 
   const [user] = useAuthState(auth)
   useEffect(() => {
-    fetch("http://localhost:5000/newProduct")
+    fetch("https://pure-wave-91095.herokuapp.com/newProduct")
       .then((res) => res.json())
       .then((data) => setProducts(data))
   }, [])

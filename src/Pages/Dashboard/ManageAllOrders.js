@@ -9,7 +9,7 @@ const ManageAllOrders = () => {
   const navigate = useNavigate()
   useEffect(() => {
     if (user) {
-      fetch("http://localhost:5000/order", {
+      fetch("https://pure-wave-91095.herokuapp.com/order", {
         method: "GET",
       })
         .then((res) => res.json())

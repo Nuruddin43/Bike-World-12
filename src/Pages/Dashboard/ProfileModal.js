@@ -16,15 +16,17 @@ const ProfileModal = () => {
       location: event.target.location.value,
       social: event.target.social.value,
     }
-    axios.post("http://localhost:5000/myprofile", profile).then((response) => {
-      const { data } = response
-      if (data.insertedId) {
-        toast("Profile is set")
-      } else {
-        toast.error("profile is failed to set")
-      }
-      event.target.reset()
-    })
+    axios
+      .post("https://pure-wave-91095.herokuapp.com/myprofile", profile)
+      .then((response) => {
+        const { data } = response
+        if (data.insertedId) {
+          toast("Profile is set")
+        } else {
+          toast.error("profile is failed to set")
+        }
+        event.target.reset()
+      })
   }
   return (
     <div>

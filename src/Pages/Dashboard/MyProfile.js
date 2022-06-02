@@ -8,7 +8,7 @@ const MyProfile = () => {
   const [profile, setProfile] = useState([])
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/myprofile`, {
+      fetch(`https://pure-wave-91095.herokuapp.com/myprofile`, {
         method: "GET",
         headers: {},
       })

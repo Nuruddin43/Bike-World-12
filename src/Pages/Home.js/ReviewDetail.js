@@ -6,7 +6,7 @@ const ReviewDetail = () => {
   const { reviewId } = useParams()
   const [review, setReview] = useState({})
   useEffect(() => {
-    const url = `http://localhost:5000/review/${reviewId}`
+    const url = `https://pure-wave-91095.herokuapp.com/review/${reviewId}`
     fetch(url)
       .then((res) => res.json())
       .then((data) => setReview(data))

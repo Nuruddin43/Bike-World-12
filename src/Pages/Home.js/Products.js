@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
-import Product from "./Product";
+import React, { useEffect, useState } from "react"
+import Product from "./Product"
 
 const Products = () => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([])
   useEffect(() => {
-    fetch("http://localhost:5000/product")
+    fetch("https://pure-wave-91095.herokuapp.com/product")
       .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, []);
+      .then((data) => setProducts(data))
+  }, [])
   return (
     <div className="mt-12">
       <h2 className="text-5xl text-center">Our Products</h2>
@@ -17,7 +17,7 @@ const Products = () => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Products;
+export default Products

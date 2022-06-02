@@ -11,7 +11,7 @@ const Reviews = () => {
 
   useEffect(() => {
     const getReview = async () => {
-      const url = `http://localhost:5000/review`
+      const url = `https://pure-wave-91095.herokuapp.com/review`
       const { data } = await axios.get(url)
       setReviews(data)
     }

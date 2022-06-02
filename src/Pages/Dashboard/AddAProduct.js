@@ -23,7 +23,7 @@ const AddAProduct = () => {
       order: event.target.order.value,
     }
     axios
-      .post("http://localhost:5000/newProduct", newProduct)
+      .post("https://pure-wave-91095.herokuapp.com/newProduct", newProduct)
       .then((response) => {
         const { data } = response
         if (data.insertedId) {

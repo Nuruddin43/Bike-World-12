@@ -28,16 +28,18 @@ const Purchase = () => {
       address: event.target.address.value,
       phone: event.target.phone.value,
     }
-    axios.post("http://localhost:5000/order", order).then((response) => {
-      const { data } = response
-      if (data.insertedId) {
-        toast("Your Order is Booked!!!")
-        event.target.reset()
-      }
-    })
+    axios
+      .post("https://pure-wave-91095.herokuapp.com/order", order)
+      .then((response) => {
+        const { data } = response
+        if (data.insertedId) {
+          toast("Your Order is Booked!!!")
+          event.target.reset()
+        }
+      })
   }
   useEffect(() => {
-    const url = `http://localhost:5000/purchase/${purchaseId}`
+    const url = `https://pure-wave-91095.herokuapp.com/purchase/${purchaseId}`
     fetch(url, {})
       .then((res) => res.json())
       .then((data) => setProduct(data))

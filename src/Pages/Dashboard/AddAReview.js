@@ -24,13 +24,15 @@ const AddAReview = () => {
       ratings: event.target.ratings.value,
       reviews: event.target.reviews.value,
     }
-    axios.post("http://localhost:5000/review", review).then((response) => {
-      const { data } = response
-      if (data.insertedId) {
-        toast("Your review is succesfully added!!!")
-        event.target.reset()
-      }
-    })
+    axios
+      .post("https://pure-wave-91095.herokuapp.com/review", review)
+      .then((response) => {
+        const { data } = response
+        if (data.insertedId) {
+          toast("Your review is succesfully added!!!")
+          event.target.reset()
+        }
+      })
   }
 
   return (

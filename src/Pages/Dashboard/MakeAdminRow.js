@@ -5,7 +5,7 @@ const MakeAdminRow = ({ user, refetch }) => {
   const { email, role } = user
 
   const makeAdmin = () => {
-    fetch(`http://localhost:5000/user/admin/${email}`, {
+    fetch(`https://pure-wave-91095.herokuapp.com/user/admin/${email}`, {
       method: "PUT",
     })
       .then((res) => res.json())

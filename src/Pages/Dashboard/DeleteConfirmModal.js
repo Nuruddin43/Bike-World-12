@@ -10,7 +10,7 @@ const DeleteConfirmModal = ({ deletingDoctor, setDeletingDoctor, refetch }) => {
     if (proceed) {
       console.log("deleted", _id)
 
-      const url = `http://localhost:5000/product/${_id}`
+      const url = `https://pure-wave-91095.herokuapp.com/product/${_id}`
       fetch(url, {
         method: "DELETE",
         headers: {

@@ -9,7 +9,9 @@ const MakeAdmin = () => {
     isLoading,
     refetch,
   } = useQuery("users", () =>
-    fetch("http://localhost:5000/user").then((res) => res.json())
+    fetch("https://pure-wave-91095.herokuapp.com/user").then((res) =>
+      res.json()
+    )
   )
   if (isLoading) {
     return <Loading></Loading>
