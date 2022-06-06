@@ -2,11 +2,11 @@
 
 Live Link (https://ctgbike-world.web.app/).
 
-### • create-react-app a project and set component
-### • added react router dom, react firebase hook, react hook form and react toastify
-### • css framework daisyUI use and tailwind use
-### • install firebase and created authentication and deploy file
-### • install react stripejs and use payment system
+### • It's a manufaturer website
+### • use react router dom, react firebase hook, react hook form and firebase
+### • use framework daisyUI and tailwind
+### • Dealers can place order and implemented admin panel, dashboard
+### • implemented payment system Stripe
 
 
 
